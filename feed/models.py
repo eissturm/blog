@@ -11,11 +11,12 @@ class Entry(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     published = models.BooleanField(default=False)
     author = models.ForeignKey('auth.User')
+    public = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = "entries"
 
-    
+
     def __str__(self):
         return self.title
 
