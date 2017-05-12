@@ -16,7 +16,7 @@ class BlogEntry extends HTMLElement {
         var blogEntry = document.querySelector("#blog-1")
         blogEntry.textContent = entryContent['body_raw'];
       }
-      xhr.open("GET", `http://localhost:7470/api/entries/${newValue}`);
+      xhr.open("GET", `/api/entries/${newValue}`);
       xhr.send();
     }
   }
