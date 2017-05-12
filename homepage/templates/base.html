@@ -1,10 +1,16 @@
+{% load staticfiles %}
 <!DOCTYPE html>
+<html>
 <head>
   {% block titleBlock %}
     <title>Eissturm homepage</title>
   {% endblock %}
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  {% block importBlock %}
+  <link rel="import" href="{% static 'scripts/Components/Entry.html' %}" />
+  {% endblock %}
 </head>
 <body style="padding-top: 70px;">
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -46,6 +52,11 @@
   {% block contentBlock %}
   <div id="root" class="container">
     <p>Hello world!</p>
+    <blog-entry data-entry-id="1" id="blog-1"></blog-entry>
   </div>
   {% endblock %}
+  {% block scriptBlock %}
+  <!--<script type="text/javascript" src="{% static 'scripts/app.js' %}"></script>-->
+  {% endblock %}
 </body>
+</html>
